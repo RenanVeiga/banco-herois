@@ -1,4 +1,12 @@
-import { Body, Controller, Get, Param, Put } from '@nestjs/common';
+import {
+  Body,
+  Controller,
+  Delete,
+  Get,
+  Param,
+  Post,
+  Put,
+} from '@nestjs/common';
 import { Heroi } from './models/heroi.interface';
 import { HeroiService } from './shared/heroi.service';
 
@@ -20,5 +28,16 @@ export class HeroiController {
   async ModifyHero(@Body() heroi: Heroi) {
     this.heroiService.ModifyHero(heroi);
     console.log('está modificado');
+  }
+
+  @Post()
+  async AddHeroi(@Body() heroi: Heroi) {
+    this.heroiService.AddHeroi(heroi);
+    console.log('está adicionado');
+  }
+
+  @Delete(':id')
+  async DeleteHeroi(@Param('id') id: number) {
+    this.heroiService.DeleteHeroi(id);
   }
 }

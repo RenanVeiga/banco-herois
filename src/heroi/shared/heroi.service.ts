@@ -29,7 +29,22 @@ export class HeroiService {
     let heroiAtt = this.getAll();
     heroiAtt = heroiAtt.filter((hero) => hero.id !== heroi.id);
     heroiAtt.push(heroi);
-    heroiAtt.sort((a, b) => a.id - b.id);
     this.mockHeroi = heroiAtt;
+    this.OrdenaArray();
+  }
+
+  AddHeroi(heroi: Heroi) {
+    const id = this.mockHeroi.length + 1;
+    heroi.id = id;
+    this.mockHeroi.push(heroi);
+    this.OrdenaArray();
+  }
+
+  DeleteHeroi(id: number) {
+    this.mockHeroi = this.mockHeroi.filter((remove) => remove.id != id);
+  }
+
+  OrdenaArray() {
+    this.mockHeroi.sort((a, b) => a.id - b.id);
   }
 }
