@@ -5,7 +5,7 @@ import { Heroi } from './models/heroi.entity';
 
 export const heroiProviders = [
   {
-    provide: 'Heroi_REPOSITORY',
+    provide: 'heroi_REPOSITORY',
     useFactory: (connection: Connection) => connection.getRepository(Heroi),
     inject: ['DATABASE_CONNECTION'],
   },
