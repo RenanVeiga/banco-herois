@@ -17,15 +17,15 @@ export class HeroiService {
     return this.heroiRepository.findOne(id);
   }
 
-  ModifyHero(heroi: Heroi) {
+  modifyHero(heroi: Heroi) {
     this.heroiRepository.update(heroi.id, heroi);
   }
 
-  AddHeroi(heroi: Heroi) {
+  addHeroi(heroi: Heroi) {
     return this.heroiRepository.create(heroi);
   }
 
-  DeleteHeroi(id: number): Promise<any> {
+  deleteHeroi(id: number): Promise<any> {
     return this.heroiRepository.delete(id);
   }
 }

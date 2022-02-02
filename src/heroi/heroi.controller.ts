@@ -25,17 +25,17 @@ export class HeroiController {
   }
 
   @Put()
-  async ModifyHero(@Body() heroi: Heroi) {
-    this.heroiService.ModifyHero(heroi);
+  async modifyHero(@Body() heroi: Heroi) {
+    this.heroiService.modifyHero(heroi);
   }
 
   @Post()
-  async AddHeroi(@Body() heroi: Heroi) {
-    this.heroiService.AddHeroi(heroi);
+  async addHeroi(@Body() heroi: Heroi) {
+    this.heroiService.addHeroi(heroi);
   }
 
   @Delete(':id')
-  async DeleteHeroi(@Param('id') id: number) {
-    this.heroiService.DeleteHeroi(id);
+  async deleteHeroi(@Param('id') id: number) {
+    this.heroiService.deleteHeroi(id);
   }
 }
