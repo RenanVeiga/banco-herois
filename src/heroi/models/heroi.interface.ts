@@ -1,4 +1,10 @@
-export interface Heroi {
+import { Entity, Column, PrimaryGeneratedColumn } from 'typeorm';
+
+@Entity()
+export class Heroi {
+  @PrimaryGeneratedColumn()
   id: number;
-  name: string;
+
+  @Column()
+  Name: string;
 }

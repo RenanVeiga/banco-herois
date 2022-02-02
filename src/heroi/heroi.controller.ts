@@ -27,13 +27,11 @@ export class HeroiController {
   @Put()
   async ModifyHero(@Body() heroi: Heroi) {
     this.heroiService.ModifyHero(heroi);
-    console.log('está modificado');
   }
 
   @Post()
   async AddHeroi(@Body() heroi: Heroi) {
     this.heroiService.AddHeroi(heroi);
-    console.log('está adicionado');
   }
 
   @Delete(':id')
