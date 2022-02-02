@@ -1,12 +1,11 @@
-import { Heroi } from '../models/heroi.interface';
-import { Injectable } from '@nestjs/common';
-import { InjectRepository } from '@nestjs/typeorm';
+import { Heroi } from '../models/heroi.entity';
+import { Inject, Injectable } from '@nestjs/common';
 import { Repository } from 'typeorm';
 
 @Injectable()
 export class HeroiService {
   constructor(
-    @InjectRepository(Heroi)
+    @Inject('heroi_REPOSITORY')
     private heroiRepository: Repository<Heroi>,
   ) {}
 

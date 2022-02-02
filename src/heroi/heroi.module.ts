@@ -1,12 +1,12 @@
 import { Module } from '@nestjs/common';
-import { TypeOrmModule } from '@nestjs/typeorm';
 import { HeroiController } from './heroi.controller';
-import { Heroi } from './models/heroi.interface';
 import { HeroiService } from './shared/heroi.service';
+import { DatabaseModule } from './database/database.module';
+import { heroiProviders } from './heroi.providers';
 
 @Module({
-  imports: [TypeOrmModule.forFeature([Heroi])],
+  imports: [DatabaseModule],
   controllers: [HeroiController],
-  providers: [HeroiService],
+  providers: [...heroiProviders, HeroiService],
 })
 export class HeroiModule {}

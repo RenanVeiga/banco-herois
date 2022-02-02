@@ -7,7 +7,7 @@ import {
   Post,
   Put,
 } from '@nestjs/common';
-import { Heroi } from './models/heroi.interface';
+import { Heroi } from './models/heroi.entity';
 import { HeroiService } from './shared/heroi.service';
 
 @Controller('heroi')
